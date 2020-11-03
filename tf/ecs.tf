@@ -17,7 +17,7 @@ data "aws_iam_policy_document" "mcare-policy-document" {
     principals {
       type = "AWS"
       identifiers = [
-      "arn:aws:iam::616703994274:user/bittrader-ecs-ecr"]
+      "arn:aws:iam::616703994274:user/mcare-ecs-ecr"]
     }
     actions = [
       "ecr:GetDownloadUrlForLayer",
