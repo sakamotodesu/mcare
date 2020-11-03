@@ -1,0 +1,29 @@
+[
+  {
+    "name": "mcare-service",
+    "image": "616703994274.dkr.ecr.ap-northeast-1.amazonaws.com/mcare:396080c2edfacb1a53f966f285643e33c9aabeea",
+    "essential": true,
+    "portMappings": [
+      {
+        "protocol": "tcp",
+        "containerPort": 8080
+      }
+    ],
+    "secrets": [
+      {
+        "valueFrom": "arn:aws:ssm:ap-northeast-1:616703994274:parameter/mcare/api/token",
+        "name": "/mcare/api/token"
+      }
+    ],
+    "requires_compatibilities": "FARGATE",
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "secretOptions": null,
+      "options": {
+        "awslogs-group": "/ecs/mcare-service",
+        "awslogs-region": "ap-northeast-1",
+        "awslogs-stream-prefix": "ecs"
+      }
+    }
+  }
+]
