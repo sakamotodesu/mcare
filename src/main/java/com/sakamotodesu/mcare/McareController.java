@@ -15,4 +15,9 @@ public class McareController {
     String loginYes() {
         return "login_yes";
     }
+
+    @RequestMapping("/reserve_yes")
+    String reserveYes() {
+        return "reserve_yes";
+    }
 }

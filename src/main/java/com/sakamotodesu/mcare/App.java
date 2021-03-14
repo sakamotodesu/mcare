@@ -18,6 +18,7 @@ public class App {
     // 　予約結果のメール通知
     // 　ユーザ管理
 
+    // TODO jarはshadowとか使わないでspringのwarにすればよさそう
 
     @RequestMapping("/")
     String home() {
