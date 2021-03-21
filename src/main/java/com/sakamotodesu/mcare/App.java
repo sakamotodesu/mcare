@@ -15,18 +15,30 @@ public class App {
     // 　ログインしましたの分岐だけ
     // 　予約しましたの分岐だけ
     // 　予約結果のDB保存
+    // 　　ローカル
+    // 　　　DB起動
+    // 　　　　Dockerでいいや
+    // 　　　schema作成とか？
+    // 　　　プロセスから接続
+    // 　　AWS
+    //     RDS
+    // 　　　コード化
     // 　予約結果のメール通知
     // 　ユーザ管理
+    // DBやってみたいこと
+    // 　インデックス貼る
+    // 　テーブルdrop
+    // 　実行計画
+    // 　まてびゅー
+    // 　dbflute
 
-    // TODO jarはshadowとか使わないでspringのwarにすればよさそう
+
+
 
     @RequestMapping("/")
     String home() {
         return "index";
     }
-
-
-
 
     public String getGreeting() {
         return "Hello world....";

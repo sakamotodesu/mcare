@@ -33,3 +33,7 @@ build
 
 # Terraform
 **/.terraform/*
+
+# mysql
+
+docker/db/data
