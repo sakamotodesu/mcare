@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>ミノルケア</title>
 </head>
 <body>
 <h1>予約に成功しました。</h1>
+<table class="reserve">
+    <tr>
+        <th>予約</th>
+    </tr>
+
+    <tr th:each="date : ${reserveList}">
+        <td th:text="${date}" class="reserve"></td>
+    </tr>
+</table>
 <h1>LINEで予約成功しましたと伝えてください。</h1>
 <h2><a href="/">もどる</a></h2>
 </body>
