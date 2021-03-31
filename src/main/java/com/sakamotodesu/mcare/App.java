@@ -21,12 +21,18 @@ public class App {
     // 　　　schema作成とか？
     // 　　　プロセスから接続
     // 　　AWS
-    //     RDS
+    //    　RDS
+    // 　　　　RDSに接続するbastion的なものが必要
+    // 　　　　　EC2たてるにしてもansible必要になっちゃう？めんどい
+    // 　　　　　　packer?
+    // 　　　　　　terraform provisionerでできそう
+    // 　　　　　　bastionにhostnameアクセスできるようにしたい
     // 　　　コード化
     // 　予約結果のメール通知
     // 　ユーザ管理
     // DBやってみたいこと
     // 　インデックス貼る
+    //
     // 　テーブルdrop
     // 　実行計画
     // 　まてびゅー

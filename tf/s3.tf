@@ -13,8 +13,12 @@ resource "aws_s3_bucket" "mcare-alb-log" {
         sse_algorithm = "AES256"
       }
     }
-  }
 
+  }
+  provisioner "local-exec" {
+    when    = destroy
+    command = "aws s3 rm s3://sakamotodesu-mcare-alb-log/AWSLogs/ --recursive" //変数は使えないみたい
+  }
   tags = {
     "Service" = var.service_name
   }
