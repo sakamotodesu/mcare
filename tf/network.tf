@@ -218,3 +218,14 @@ resource "aws_lb_target_group" "mcare-alb-target" {
   depends_on = [
   aws_lb.mcare-alb]
 }
+
+resource "aws_route53_record" "mcare-bastion-record" {
+  zone_id = data.aws_route53_zone.sakamoto-ninja.zone_id
+  name    = "bastion.mcare.sakamoto.ninja"
+  type    = "CNAME"
+  ttl     = 300
+
+  records = [
+    aws_instance.mcare-ec2.public_dns
+  ]
+}
