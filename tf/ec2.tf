@@ -61,3 +61,8 @@ module "mcare-ec2-sg" {
   cidr_blocks = [
   "0.0.0.0/0"]
 }
+// TODO sudo yum update -y
+// sudo yum install -y https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
+// sudo yum-config-manager --disable mysql80-community
+// sudo yum-config-manager --enable mysql57-community
+// sudo yum install -y mysql-community-client

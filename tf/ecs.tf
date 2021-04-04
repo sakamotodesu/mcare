@@ -56,7 +56,7 @@ resource "aws_ecs_service" "mcare-service" {
   name             = "${var.service_name}-service"
   cluster          = aws_ecs_cluster.mcare-cluster.id
   task_definition  = aws_ecs_task_definition.mcare-service.arn
-  desired_count    = 1
+  desired_count    = 0
   launch_type      = "FARGATE"
   platform_version = "1.3.0"
 
