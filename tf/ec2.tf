@@ -49,7 +49,7 @@ resource "aws_instance" "mcare-ec2" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "example"
+    Name = "mcare-bastion"
   }
 }
 

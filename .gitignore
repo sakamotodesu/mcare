@@ -33,6 +33,7 @@ build
 
 # Terraform
 **/.terraform/*
+**/terraform.tfvars
 
 # mysql
 

@@ -1,3 +1,5 @@
+variable "rds_password" {}
+
 resource "aws_db_instance" "mcare-db" {
   allocated_storage      = 20
   engine                 = "mysql"
@@ -5,11 +7,16 @@ resource "aws_db_instance" "mcare-db" {
   instance_class         = "db.t2.micro"
   name                   = "mcare_db"
   username               = "admin"
+  password               = var.rds_password
   parameter_group_name   = "default.mysql5.7"
   skip_final_snapshot    = true
   copy_tags_to_snapshot  = true
   max_allocated_storage  = 1000
   vpc_security_group_ids = [aws_security_group.mcare-db-sg.id]
+
+  tags = {
+    "Service" = "mcare"
+  }
 }
 
 resource "aws_db_subnet_group" "mcare-db-subnet-group" {
