@@ -28,6 +28,11 @@ public class App {
     // 　　　　　　terraform provisionerでできそう
     // 　　　　　　bastionにhostnameアクセスできるようにしたい
     // 　　　コード化
+    // 　　　　EC2の中はansibleにしてみるか
+    // 　　　DB接続先はpropertiesファイルとかで選択する？
+    // 　　　　AWSだけ別のproperties使うとかSSMで指定させる？
+    // 　　　　　DB接続先もDB作ってみないとわからないから外から注入する必要がある
+    // 　　　　　　SSM parameterでよさそう
     // 　予約結果のメール通知
     // 　ユーザ管理
     // DBやってみたいこと
