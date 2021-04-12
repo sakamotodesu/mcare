@@ -1,0 +1,8 @@
+- name: install community release
+  yum: name=https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm state=present
+- name: disable mysql80 community
+  shell: "yum-config-manager --disable mysql80-community"
+- name: disable mysql57 community
+  shell: "yum-config-manager --disable mysql57-community"
+- name: install community-client
+  yum: name=mysql-community-client state=latest

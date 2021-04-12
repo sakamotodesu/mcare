@@ -1,0 +1,5 @@
+- name: Configure bastion
+  hosts: servers
+  become: True
+  roles:
+    - mysql-client
