@@ -229,3 +229,14 @@ resource "aws_route53_record" "mcare-bastion-record" {
     aws_instance.mcare-ec2.public_dns
   ]
 }
+
+resource "aws_route53_record" "mcare-db-record" {
+  zone_id = data.aws_route53_zone.sakamoto-ninja.zone_id
+  name    = "db.mcare.sakamoto.ninja"
+  type    = "CNAME"
+  ttl     = 300
+
+  records = [
+    aws_db_instance.mcare-db.address
+  ]
+}
