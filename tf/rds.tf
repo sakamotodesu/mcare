@@ -5,7 +5,7 @@ resource "aws_db_instance" "mcare-db" {
   engine                 = "mysql"
   engine_version         = "5.7.31"
   instance_class         = "db.t2.micro"
-  name                   = "mcare_db"
+  name                   = "mcare"
   username               = "admin"
   password               = var.rds_password
   parameter_group_name   = "default.mysql5.7"
@@ -13,6 +13,7 @@ resource "aws_db_instance" "mcare-db" {
   copy_tags_to_snapshot  = true
   max_allocated_storage  = 1000
   vpc_security_group_ids = [aws_security_group.mcare-db-sg.id]
+  db_subnet_group_name   = aws_db_subnet_group.mcare-db-subnet-group.name
 
   tags = {
     "Service" = "mcare"
@@ -22,7 +23,8 @@ resource "aws_db_instance" "mcare-db" {
 resource "aws_db_subnet_group" "mcare-db-subnet-group" {
   name        = "mcare-db-subnet-group"
   description = "mcare DB Subnet Group"
-  subnet_ids  = [aws_subnet.mcare-subnet-public_0.id, aws_subnet.mcare-subnet-public_1.id]
+  subnet_ids = [aws_subnet.mcare-subnet-public_0.id,
+  aws_subnet.mcare-subnet-public_1.id]
 }
 
 resource "aws_security_group" "mcare-db-sg" {
