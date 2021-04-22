@@ -1,12 +1,10 @@
-variable "rds_password" {}
-
 resource "aws_db_instance" "mcare-db" {
   allocated_storage      = 20
   engine                 = "mysql"
   engine_version         = "5.7.31"
   instance_class         = "db.t2.micro"
   name                   = "mcare"
-  username               = "admin"
+  username               = var.rds_user
   password               = var.rds_password
   parameter_group_name   = "default.mysql5.7"
   skip_final_snapshot    = true

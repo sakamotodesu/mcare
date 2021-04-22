@@ -9,6 +9,20 @@
         "containerPort": 8080
       }
     ],
+    "secrets": [
+      {
+        "valueFrom": "arn:aws:ssm:ap-northeast-1:616703994274:parameter/mcare/mysql/datasource",
+        "name": "DATASOURCE"
+      },
+      {
+        "valueFrom": "arn:aws:ssm:ap-northeast-1:616703994274:parameter/mcare/mysql/user",
+        "name": "MYSQL_USER"
+      },
+      {
+        "valueFrom": "arn:aws:ssm:ap-northeast-1:616703994274:parameter/mcare/mysql/password",
+        "name": "MYSQL_PASSWORD"
+      }
+    ],
     "requires_compatibilities": "FARGATE",
     "logConfiguration": {
       "logDriver": "awslogs",
